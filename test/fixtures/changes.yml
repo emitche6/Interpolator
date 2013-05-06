@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  regex_old: MyString
+  regex_new: MyString
+  interpolation_id: 1
+
+two:
+  regex_old: MyString
+  regex_new: MyString
+  interpolation_id: 1

@@ -1,0 +1,9 @@
+<h1>Comments</h1>
+<% @comments.each do |comment| %>
+<p><b><%= comment.user.username %></b></p>
+<p><%= comment.content %></p>
+<% end %>
+
+<br />
+
+<%= link_to 'Add Comment', new_interpolation_comment_path(@interpolation) %>

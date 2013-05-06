@@ -1,0 +1,35 @@
+<%= form_for(@interpolation) do |f| %>
+  <% if @interpolation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interpolation.errors.count, "error") %> prohibited this interpolation from being saved:</h2>
+
+      <ul>
+      <% @interpolation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :private %><br />
+    <%= f.check_box :private %>
+  </div>
+  <%= f.fields_for :changes do |c| %>
+    <div class="field">
+      <%= c.label :regex_old %><br />
+      <%= c.text_field :regex_old %>
+    </div
+    <div class="field">
+      <%= c.label :regex_new %><br />
+      <%= c.text_field :regex_new %>
+    </div>
+  <%end%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

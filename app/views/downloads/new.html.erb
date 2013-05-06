@@ -1,0 +1,6 @@
+<h1>Download Interpolation</h1>
+<p>Are you sure you want to download this?</p>
+<%= form_for [@interpolation, @download] do |f| %>
+<%= f.submit "Yes" %>
+<% end %>
+<%= link_to 'Back', interpolation_path(@interpolation) %>

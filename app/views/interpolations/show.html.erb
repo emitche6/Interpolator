@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @interpolation.name %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%=link_to @interpolation.user.username, @interpolation.user %>
+</p>
+
+<% @interpolation.changes.each do |change| %>
+  <p>
+    <b>Change: </b>    
+    <p><%= change.regex_old%></p>
+    <b>To: </b>
+    <p><%= change.regex_new%></p>
+  </p>
+<% end %>
+
+<p><b>Comments:</b></p>
+
+<% @interpolation.comments.each do |comment| %>
+  <p>
+    <b><%=comment.user.username%></b>
+    
+    <p><%= comment.content%></p>
+    <p><%= comment.created_at%></p>
+  </p>
+<% end %>
+
+<%= link_to 'Add comment', new_interpolation_comment_path(@interpolation) %>
+
+<%= ratings_for @interpolation, :dimensions => :awesomeness %>
+<p>
+  <b><%= pluralize(@interpolation.downloads_count, "download") %></b>
+</p>
+
+<% if current_user == @interpolation.user %>
+<%= link_to 'Edit', edit_interpolation_path(@interpolation) %> |
+<% end %>
+<%= link_to 'Back', interpolations_path %>
+<%= link_to 'Download', new_interpolation_download_path(@interpolation) %>
+

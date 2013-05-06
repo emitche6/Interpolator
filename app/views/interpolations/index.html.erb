@@ -1,0 +1,31 @@
+<h1>Listing interpolations</h1>
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Private</th>
+    <th>Rating</th>
+    <th>Downloads</th>
+    <th></th>
+  </tr>
+
+<% Interpolation.most_recent.each do |interpolation| %>
+  <tr>
+    <td><%= interpolation.name %></td>
+    <td><%= link_to interpolation.user.username, interpolation.user %></td>
+    <td><%= interpolation.private %></td>
+    <td><%= interpolation.rating_average %></td>
+    <td><%= interpolation.downloads_count %></td>
+    <td><%= link_to 'Show', interpolation %></td>
+    <% if current_user == interpolation.user %>
+    <td><%= link_to 'Edit', edit_interpolation_path(interpolation) %></td>
+    <td><%= link_to 'Destroy', interpolation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Interpolation', new_interpolation_path %>
