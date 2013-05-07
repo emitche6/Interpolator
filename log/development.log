@@ -31922,3 +31922,4 @@ ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
 Started GET "/assets/taberly.js?body=1" for 127.0.0.1 at 2013-05-06 23:12:36 -0400
 Served asset /taberly.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
