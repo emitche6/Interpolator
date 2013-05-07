@@ -9,8 +9,11 @@ class CommentsController < ApplicationController
       flash[:notice] = "You must sign in or register to do this."
       redirect_to new_user_path
     else
-      @interpolation = Interpolation.find(params[:interpolation_id])
-      @comment = @interpolation.comments.build
+      respond_to do |format|
+        format.html { @interpolation = Interpolation.find(params[:interpolation_id])
+          @comment = @interpolation.comments.build }
+        format.js {}
+    end
    end
   end
   

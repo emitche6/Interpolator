@@ -30,8 +30,9 @@
   </p>
 <% end %>
 
-<%= link_to 'Add comment', new_interpolation_comment_path(@interpolation) %>
-
+<div id="comments">
+<%= link_to 'Add comment', new_interpolation_comment_path(@interpolation), remote: true %>
+</div>
 <%= ratings_for @interpolation, :dimensions => :awesomeness %>
 <p>
   <b><%= pluralize(@interpolation.downloads_count, "download") %></b>

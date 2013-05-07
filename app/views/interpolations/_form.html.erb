@@ -19,16 +19,13 @@
     <%= f.label :private %><br />
     <%= f.check_box :private %>
   </div>
+  <div>
   <%= f.fields_for :changes do |c| %>
-    <div class="field">
-      <%= c.label :regex_old %><br />
-      <%= c.text_field :regex_old %>
-    </div
-    <div class="field">
-      <%= c.label :regex_new %><br />
-      <%= c.text_field :regex_new %>
-    </div>
+    <%= render "change_fields", :f => c %>
   <%end%>
+
+  <%= link_to_add_fields "Add Change", f, :changes %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
