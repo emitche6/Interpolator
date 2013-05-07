@@ -1,6 +1,7 @@
-<h1>Editing user</h1>
+<a href="http://localhost:3000/interpolations"><%= image_tag("logo_int.gif", :alt => "Interpolator") %></a><h1 class="centerer">Editing user</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
+<p id="backlink"> <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+</p>

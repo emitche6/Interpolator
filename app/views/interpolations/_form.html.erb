@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div id="login2">
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -19,17 +19,15 @@
     <%= f.label :private %><br />
     <%= f.check_box :private %>
   </div>
+  <div>
   <%= f.fields_for :changes do |c| %>
-    <div class="field">
-      <%= c.label :regex_old %><br />
-      <%= c.text_field :regex_old %>
-    </div
-    <div class="field">
-      <%= c.label :regex_new %><br />
-      <%= c.text_field :regex_new %>
-    </div>
+    <%= render "change_fields", :f => c %>
   <%end%>
+
+  <%= link_to_add_fields "Add Change", f, :changes %>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => 'submit'%>
   </div>
+</div>
 <% end %>

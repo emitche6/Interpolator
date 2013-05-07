@@ -1,5 +1,5 @@
 body { 
-	margin-bottom:2pt;
+	height:100%;
 }
 
 form {
@@ -148,11 +148,28 @@ form {
 	border: 3pt orange outset;
 	margin-right:auto;
 	margin-left:auto;
-	text-align:center;
 	border-radius:15pt;
 	background-color:white;
+	padding:3pt;
+	overflow:hidden;
 }
 
+.interpolator h3 {
+	margin:2pt;
+	display:inline;
+}
+
+.interpolator p {
+	margin:0px;
+}
+
+#upline {
+	float:right;
+}
+
+#inner {
+	float:right;
+}
 
 /*Thanks: http://davidwalsh.name/css-triangles*/
 /*div.arrowup {
@@ -249,4 +266,61 @@ div.arrowdown {
 
 #user {
 	text-align:center;
+}
+
+#big_main {
+	height:100%;
+}
+
+#explanation {
+	border:5pt purple outset;
+	width:50%;
+	border-radius:10pt;
+	padding:3pt;
+	margin-bottom:10pt;
+
+}
+
+hr {
+	color:purple;
+	margin-top:5pt;
+	height:5px;
+	background-color:purple;
+	width:100%
+	position:absolute;
+}
+
+#comment {
+	border:5pt orange outset;
+	border-radius:10pt;
+	padding:3pt;
+	width:50%;
+	margin-bottom:5pt;
+	overflow:hidden;
+}
+
+#page {
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	border:5pt #4B0082 outset;
+	border-radius:10pt;
+	padding:5pt;
+}
+
+dd, dt {
+	padding:4pt;
+}
+
+
+
+#timestamp {
+	margin-top:1px;
+	font-style:italic;
+	float:right;
+}
+
+#user_page {
+	padding:5pt;
+
 }
