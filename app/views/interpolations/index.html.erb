@@ -1,31 +1,124 @@
-<h1>Listing interpolations</h1>
-<p id="notice"><%= notice %></p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-    <th>Private</th>
-    <th>Rating</th>
-    <th>Downloads</th>
-    <th></th>
-  </tr>
-
-<% Interpolation.most_recent.each do |interpolation| %>
-  <tr>
-    <td><%= interpolation.name %></td>
-    <td><%= link_to interpolation.user.username, interpolation.user %></td>
-    <td><%= interpolation.private %></td>
-    <td><%= interpolation.rating_average %></td>
-    <td><%= interpolation.downloads_count %></td>
-    <td><%= link_to 'Show', interpolation %></td>
-    <% if current_user == interpolation.user %>
-    <td><%= link_to 'Edit', edit_interpolation_path(interpolation) %></td>
-    <td><%= link_to 'Destroy', interpolation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Interpolation', new_interpolation_path %>
+<script>
+	$(document).ready(function() {
+		$("#sync").click(function() {
+			console.log(this.value);
+		});
+	});
+</script>
+        <div id="logo">
+        	<%= image_tag("logo_int.gif", :alt => "Interpolator") %>
+        </div>
+	<div id="sidebox">
+		<!-- <div id="login">
+                	<h3>Login:</h3>
+			<form>
+				Username:<input type="text" name="username" id="username"/>
+				<br />
+				Password:<input type="password" name="password" />
+				<br />
+				<a href="signup.html">SIGN UP</a>
+				<input type="submit" value="Login!" name="login" id="submit"/>
+			
+			</form>
+		</div> -->
+		<p id="notice"><%= notice %></p>
+		<div id="new">
+			<h3>Make a new Interpolator:</h3>
+			<%= button_to 'New Interpolation', new_interpolation_path, :method=> :get, :id=> "new_int" %>
+			<% if current_user %>
+			<button id="sync" value= '<%= current_user.options %>'>SYNC</button>
+			<%end%>
+        </div>
+	</div>
+	<div id="big_main">
+		<% if current_user %>	
+		<div id="right_side">
+			<h3> Your Interpolations:</h3>
+			<ul>
+			<% current_user.interpolations.each do |i| %>
+				<li><%= link_to i.name, i %></li>
+			<% end %>
+			</ul>	
+		</div>
+		<% else %>
+		<% end %>
+        <div id="main" ">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">BEST</a></li>
+				<li><a href="#tabs-2">NEWEST</a></li>
+				<li><a href="#tabs-3">MOST DOWNLOADED</a></li>
+			</ul>
+			<div id="tabs-1">
+				<% Interpolation.highest_rated.each do |i| %>
+				<div class="interpolator">
+                 	<h3 id="int_namer"><%= i.name %></h3>
+                 	<div id="upline">
+           			<b>Average Rating: </b>
+           			<%= i.rating_average %>
+           			<b>Downloads: </b>
+           			<%= i.downloads_count %>
+           			</div>
+                 	<br /> 
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
+           			<br />
+                 	<div id="inner">
+                 	<%= link_to 'Show', i %>
+                 	<% if current_user == i.user %>
+                 	<%= link_to 'Edit', edit_interpolation_path(i) %>
+                 	<%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure you want to deleter your Interpolation?' } %>
+                 	<% end %>
+                 	</div>
+                </div>
+                <% end %>
+                		
+			</div>
+			<div id="tabs-2">
+				<% Interpolation.most_recent.each do |i| %>
+				<div class="interpolator">
+                 	<h3 id="int_namer"><%= i.name %></h3>
+                 	<div id="upline">
+                 	<b>Average Rating: </b>
+           			<%= i.rating_average %>
+           			<b>Downloads: </b>
+           			<%= i.downloads_count %>
+           			</div>
+                 	<br /> 
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
+           			<br />
+                 	<div id="inner">
+                 	<%= link_to 'Show', i %>
+                 	<% if current_user == i.user %>
+                 	<%= link_to 'Edit', edit_interpolation_path(i) %>
+                 	<%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure you want to deleter your Interpolation?' } %>
+                 	<% end %>
+                 	</div>
+                </div>
+                <% end %>   
+			</div>
+			<div id="tabs-3">
+				<% Interpolation.most_downloaded.each do |i| %>
+				<div class="interpolator">
+                 	<h3 id="int_namer"><%= i.name %></h3>
+                 	<div id="upline">
+           			<b>Average Rating: </b>
+           			<%= i.rating_average %>
+           			<b>Downloads: </b>
+           			<%= i.downloads_count %>
+           			</div>
+                 	<br /> 
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
+           			<br />
+                 	<div id="inner">
+                 	<%= link_to 'Show', i %>
+                 	<% if current_user == i.user %>
+                 	<%= link_to 'Edit', edit_interpolation_path(i) %>
+                 	<%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure you want to deleter your Interpolation?' } %>
+                 	<% end %>
+                 	</div>
+                </div>
+                <% end %>
+			</div> 
+	        </div>
+        </div>
+        </div>

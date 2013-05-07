@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LoginApp</title>
+  <title>Interpolator</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag :defaults %>
   <%= ajaxful_rating_style %>
+  <%= favicon_link_tag 'favicon.gif' %>
 </head>
 <body>
- 
+ 	<div id="ellisisthelizardking">
+  	</div>
     <div id="nav">
-         <% if current_user %>
+        <% if current_user %>
         <%= current_user.username %>
         <%= link_to "Edit Profile", edit_user_path(current_user.id)%>
-        <%= link_to "Logout", :logout%>
+        <%= link_to "Logout", :logout %>
         <% else %>
         <%= link_to "Register", new_user_path%> | 
         <%= link_to "Login", :login %>
+        <!-- <div id="login">
+                	<h3>Login:</h3>
+			<form>
+				Username:<input type="text" name="username" id="username"/>
+				<br />
+				Password:<input type="password" name="password" />
+				<br />
+				<a href="signup.html">SIGN UP</a>
+				<input type="submit" value="Login!" name="login" id="submit"/>
+			
+			</form> -->
         <% end %>
     </div>
 

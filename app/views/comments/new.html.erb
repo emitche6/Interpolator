@@ -1,6 +1,7 @@
-<h1>New Comment</h1>
+<%= link_to image_tag("logo_int.gif", :alt => "Interpolator"), :interpolations %>
+<h1 class="centerer">New Comment</h1>
 
 <%= render 'form' %>
 
 
-<%= link_to 'Back', interpolation_comments_path(@interpolation) %>
+<p id="backlink"><%= link_to 'Back', interpolation_path(@interpolation) %></p>

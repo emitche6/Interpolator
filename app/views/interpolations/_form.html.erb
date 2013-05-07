@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div id="login2">
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -27,6 +27,7 @@
   <%= link_to_add_fields "Add Change", f, :changes %>
 </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => 'submit'%>
   </div>
+</div>
 <% end %>

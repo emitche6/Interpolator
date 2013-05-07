@@ -1,5 +1,7 @@
-<h1>Listing users</h1>
+<%= link_to image_tag("logo_int.gif", :alt => "Interpolator"), :interpolations %>
+<h1 class="centerer">Listing users</h1>
 <p id="notice"><%= notice %></p>
+<div id="login2">
 <table>
   <tr>
     <th>Username</th>
@@ -24,7 +26,7 @@
   </tr>
 <% end %>
 </table>
- 
+</div>
 <br />
  
-<%= link_to 'New User', new_user_path %>
+<p id="backlink"><%= link_to 'New User', new_user_path %></p>

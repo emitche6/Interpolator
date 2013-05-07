@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= link_to image_tag("logo_int.gif", :alt => "Interpolator"), :interpolations %><p id="notice"><%= notice %></p>
+<h1 class="centerer">User Information</h1>
+<div id="login2">
+<div id="user_page">
 
 <p>
   <b>Username:</b>
@@ -22,8 +25,11 @@
 </p>
 <% end %>
 
-
+</div>
+</div>
+<p id="backlink">
 <% if current_user == @user %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', interpolations_path %>
+</p>

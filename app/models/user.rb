@@ -9,5 +9,19 @@ class User < ActiveRecord::Base
 
   ajaxful_rater
   letsrate_rater
+  
+  def options
+    a = Array.new
+    self.downloads.each do |d|
+      d.interpolation.changes.each do |c|
+        b = Array.new
+        b.push(c.regex_old)
+        b.push(c.regex_new)
+        a.push(b)
+      end
+    end
+    return a
+  end
+
 
 end
