@@ -39,6 +39,7 @@ form {
 	border-radius:5pt;
     border:3pt purple inset;
     width:75%;
+    background-color:beige;
 }
 
 /*#login input[type="text"], #login input[type="password"] {
@@ -149,7 +150,7 @@ form {
 	margin-right:auto;
 	margin-left:auto;
 	border-radius:15pt;
-	background-color:white;
+	background-color:beige;
 	padding:3pt;
 	overflow:hidden;
 }
@@ -251,7 +252,7 @@ div.arrowdown {
 	list-style-type:none;
 	border:2pt purple outset;
 	border-radius:5pt;
-	background-color:white;
+	background-color:beige;
 	padding:2pt;
 	text-align:center;
 }
@@ -327,4 +328,15 @@ dd, dt {
 
 #ellisisthelizardking {
 	display:none;
+}
+
+#sync {
+        border:2pt orange outset;
+        border-radius:65pt;
+	width:10em;
+	height:4em;
+	font-size:15pt;
+	text-shadow:2pt 2pt orange;
+	color:purple;
+	background-color:silver;
 }
