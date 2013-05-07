@@ -31,7 +31,8 @@
 <% end %>
 
 <div id="comments">
-<%= link_to 'Add comment', new_interpolation_comment_path(@interpolation), remote: true %>
+
+<%= link_to 'Add comment', new_interpolation_comment_path(@interpolation) %>
 </div>
 <%= ratings_for @interpolation, :dimensions => :awesomeness %>
 <p>
