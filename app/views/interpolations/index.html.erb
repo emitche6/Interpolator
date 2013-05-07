@@ -44,11 +44,13 @@
 				<div class="interpolator">
                  	<h3 id="int_namer"><%= i.name %></h3>
                  	<div id="upline">
+           			<b>Average Rating: </b>
            			<%= i.rating_average %>
+           			<b>Downloads: </b>
            			<%= i.downloads_count %>
            			</div>
                  	<br /> 
-                 	<p>Created by:<%= link_to i.user.username %> </p>
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
            			<br />
                  	<div id="inner">
                  	<%= link_to 'Show', i %>
@@ -62,18 +64,50 @@
                 		
 			</div>
 			<div id="tabs-2">
-				<div class="interpolator">                    
-		
-					<div class="interpolator">
-					
-					</div>
-				
-                </div>    
+				<% Interpolation.most_recent.each do |i| %>
+				<div class="interpolator">
+                 	<h3 id="int_namer"><%= i.name %></h3>
+                 	<div id="upline">
+                 	<b>Average Rating: </b>
+           			<%= i.rating_average %>
+           			<b>Downloads: </b>
+           			<%= i.downloads_count %>
+           			</div>
+                 	<br /> 
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
+           			<br />
+                 	<div id="inner">
+                 	<%= link_to 'Show', i %>
+                 	<% if current_user == i.user %>
+                 	<%= link_to 'Edit', edit_interpolation_path(i) %>
+                 	<%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure you want to deleter your Interpolation?' } %>
+                 	<% end %>
+                 	</div>
+                </div>
+                <% end %>   
 			</div>
 			<div id="tabs-3">
+				<% Interpolation.most_downloaded.each do |i| %>
 				<div class="interpolator">
-                     <h1>SOMETHINGM</h1>
+                 	<h3 id="int_namer"><%= i.name %></h3>
+                 	<div id="upline">
+           			<b>Average Rating: </b>
+           			<%= i.rating_average %>
+           			<b>Downloads: </b>
+           			<%= i.downloads_count %>
+           			</div>
+                 	<br /> 
+                 	<p>Created by:<%= link_to i.user.username, i.user %> </p>
+           			<br />
+                 	<div id="inner">
+                 	<%= link_to 'Show', i %>
+                 	<% if current_user == i.user %>
+                 	<%= link_to 'Edit', edit_interpolation_path(i) %>
+                 	<%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure you want to deleter your Interpolation?' } %>
+                 	<% end %>
+                 	</div>
                 </div>
+                <% end %>
 			</div> 
 	        </div>
         </div>
