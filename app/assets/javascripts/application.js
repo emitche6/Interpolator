@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+apps/assests/javascript/taberly.js
+//= require jquery
+//= require jquery_ujs

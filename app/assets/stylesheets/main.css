@@ -1,0 +1,252 @@
+body { 
+	margin-bottom:2pt;
+}
+
+form {
+	margin-bottom:5px;
+}
+
+#sidebox {
+	display:inline;
+	float:right;
+	CLEAR:BOTH;
+}
+
+#login {
+	display:inline;
+	float:right;	
+	border: 3pt purple outset;
+	padding:3pt;
+	border-radius:15pt;
+}
+
+.centerer {
+	text-align:center;
+}
+
+#login2 {
+	
+	border: 3pt purple outset;
+	padding:3pt;
+	border-radius:15pt;
+	margin-left:auto;
+	margin-right:auto;
+	width:33%;
+	overflow:hidden;
+}
+
+#login2 input[type="text"], #login2 input[type="password"] {
+	border-radius:5pt;
+    border:3pt purple inset;
+    width:75%;
+}
+
+/*#login input[type="text"], #login input[type="password"] {
+	border-radius:5pt;
+	border:1pt purple inset;
+	float:right;
+	width:60%;
+}*/
+
+#sign_in {
+    border: 3pt purple outset;
+	border-radius:15pt;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:3em;
+	padding:8pt;
+	font-size:20pt;
+	width:25%;
+	overflow:hidden;
+}
+
+#sign_in input[type="text"], #sign_in input[type="password"] {
+	border-radius:5pt;
+	border:3pt purple inset;
+	float:right;
+	width:50%;
+	height:4%;
+}
+
+#login input[type="text"], #login input[type="password"] {
+        border-radius:5pt;
+}
+
+#submit2 {
+	font-size:15pt;
+        margin-top:5pt;
+        border:3pt orange outset;
+        border-radius:10pt;
+	float:right;
+	background-color:#e6e6e6;
+}
+
+#login a {
+	vertical-align:text-bottom;
+}
+
+#logo {
+	display:inline;
+	width:33%;
+	height:10%;
+}
+
+
+#main {
+	margin-right:auto;
+	margin-left:auto;
+	width:60%;
+	border: 3pt #FE950F outset;
+	height:100%;
+	clear:left;
+	margin-top:10pt;
+	border-radius:15pt;
+	background-color:purple;
+}
+
+.tab1 {
+	background-color:purple;	
+	border:3pt #FE950f outset;
+}
+
+.tab2 {
+	background-color:orange;
+	border:3pt purple inset;
+}
+
+.tab3 {
+	background-color:#FF7F24
+	border:3pt #BF3EFF groove;
+}
+
+#submit {
+	font-size:12pt;
+	float:right;
+	margin-top:5pt;
+	border:2pt orange outset;
+	border-radius:10pt;
+	background-color:LightGrey;
+}
+
+#backlink {
+	clear:both;
+	float:right;
+	width:36%;
+}
+
+#login  h3 {
+	text-align:center;
+}
+
+#username {
+	margin-bottom:2pt;
+}
+
+.interpolator {
+	margin:5pt;
+	width:90%;
+	border: 3pt orange outset;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+	border-radius:15pt;
+	background-color:white;
+}
+
+
+/*Thanks: http://davidwalsh.name/css-triangles*/
+/*div.arrowup {
+	width:0px; 
+	height:0px; 
+	border-left:15px solid transparent;  /* left arrow slant */
+	/*border-right:15px solid transparent; /* right arrow slant */
+	/*border-bottom:15px solid orange; /* bottom, add background color here */
+	/*font-size:0px;
+	line-height:0px;
+	opacity:0.4;	
+}
+
+div.arrowdown {
+	width:0px; 
+	height:0px; 
+	border-left:15px solid transparent;
+	border-right:15px solid transparent;
+	border-top:15px solid purple;
+	font-size:0px;
+	opacity:0.4;
+	line-height:0px;
+}*/
+
+#new {
+	text-align:center;
+	margin:10pt;
+	clear:right;
+	padding-top:10pt;
+}
+
+#new_int {
+        border:2pt orange outset;
+        border-radius:65pt;
+	width:10em;
+	height:4em;
+	font-size:15pt;
+	text-shadow:2pt 2pt orange;
+	color:purple;
+	background-color:silver;
+}
+
+.button {
+	width:33%;
+}
+
+#tabs li {
+	list-style-type:none;
+	display:inline;
+	border:2pt orange outset;
+	background-color:white;
+	border-radius:5pt;
+	padding:4pt;
+}
+
+#tabs li A:link {
+	text-decoration:none;
+	color:black;
+}
+
+#tabs li A:visited {
+	color:black;
+}
+
+#right_side {
+	display:inline;
+	clear:right;
+	position:absolute;
+	border:3pt purple outset;
+	height:96%;
+	width:17%;
+	border-radius:15pt;
+    background-color:#FE950F;
+	padding:5pt;
+
+}
+
+#right_side li {
+	list-style-type:none;
+	border:2pt purple outset;
+	border-radius:5pt;
+	background-color:white;
+	padding:2pt;
+	text-align:center;
+}
+
+#right_side h3 {
+	font-weight:bold;	
+}
+
+#nav {
+	float:right;
+}
+
+#user {
+	text-align:center;
+}
